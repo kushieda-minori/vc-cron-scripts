@@ -62,6 +62,13 @@ Example Cron Jobs are below. Here I use the date configured in the script so I o
 55 * * * * discord-webhook-ABB.sh '' '' '' '<@&2345987235896029>' 'https://discordapp.com/api/webhooks/API/Key'
 ```
 
+These can also be combined onto a single cron line. Configuring this way will also allow you to use the date setting in the CRON job instead of the script.
+
+```sh
+# ABB notices (60, 10, 5, and 0 minute warnings)
+0,50,55 * * * * discord-webhook-ABB.sh '2020' '11' '27' '<@&2345987235896029>' 'https://discordapp.com/api/webhooks/API/Key'
+```
+
 Example messages from the above cron jobs as seen in Discord:
 
 > ABB Round 1 in 60 minutes! @members
