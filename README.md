@@ -90,13 +90,13 @@ The script accepts up to 1 parameter:
 
 1. Webhook URL
 
-Example Cron Jobs are below. Here I use the date configured in the script so I only need to change the date in 1 location insead of 3 every month:
+Example Cron Job is below.
 
 ```sh
 # VC Castle Vit notice
 0 * * * discord-webhook-CastleTime.sh 'https://discordapp.com/api/webhooks/API/Key'
 ```
 
-Example messages from the above cron jobs as seen in Discord:
+Example messages from the above cron job as seen in Discord:
 
 > One free Castle vitality starting now, ending in 2 hours
