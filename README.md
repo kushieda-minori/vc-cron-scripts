@@ -4,6 +4,8 @@ These scripts are used for Discord integration. they can be used by creating a "
 
 They will work on Linux or BSD. Runing under WSL on Windows is unknown. If you try it, let me know if it works.
 
+**NOTE:** None of these scripts use proper escaping of the message before placing it into the Payload that is sent to Discord. If the message is not a properly escaped JSON string, then discord may fail to process it.
+
 ## discord-webhook-VC.sh
 
 This is a generic webhook script that can be used to send a message. 
