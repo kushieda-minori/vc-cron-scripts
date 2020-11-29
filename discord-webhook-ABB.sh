@@ -78,7 +78,7 @@ else
 fi
 
 # no R1 day 1
-if (( $sD == $D && $round == 1 )); then
+if (( $startD == $D && $round == 1 )); then
     exit
 fi
 
