@@ -1,4 +1,5 @@
 #!/bin/bash
+
 startY=${1:-2020}
 startM=${2:-11}
 startD=${3:-27}
@@ -63,16 +64,21 @@ fi
 
 timeTillNext=$((60 - $m))
 
-if (( $h ==  7 || ($h == 8 && $m==0) )); then
+if (( $h == 7 || ($h == 8 && $m==0) )); then
     round="1"
-elif (( $h ==  11 || ($h == 12 && $m==0) )); then
+elif (( $h == 11 || ($h == 12 && $m==0) )); then
     round="2"
-elif (( $h ==  18 || ($h == 19 && $m==0) )); then
+elif (( $h == 18 || ($h == 19 && $m==0) )); then
     round="3"
-elif (( $h ==  21 || ($h == 22 && $m==0) )); then
+elif (( $h == 21 || ($h == 22 && $m==0) )); then
     round="4"
 else
     # not close enough to the next round.
+    exit
+fi
+
+# no R1 day 1
+if (( $sD == $D && $round == 1 )); then
     exit
 fi
 
