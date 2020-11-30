@@ -73,13 +73,13 @@ These can also be combined onto a single cron line. Configuring this way will al
 
 Example messages from the above cron jobs as seen in Discord:
 
-> ABB Round 1 in 60 minutes! @members
+> ABB Day 3 Round 1 in 60 minutes! @members
 
-> ABB Round 1 in 10 minutes! @members
+> ABB Day 3 Round 1 in 10 minutes! @members
 
-> ABB Round 1 in 5 minutes! @members
+> ABB Day 3 Round 1 in 5 minutes! @members
 
-> ABB Round 1 START! @members
+> ABB Day 3 Round 1 START! @members
 
 
 ## discord-webhook-CastleTime.sh
