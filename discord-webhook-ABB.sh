@@ -88,11 +88,13 @@ fi
 # strip 0 for math since leading 0's indicate an octal number.
 # if the minute happens to be '09', this fails since '09' is
 # not a valid octal number
-nm=${m##+(0)}
+nm=${m##0}
 nm=${nm:-0}
 # same as above, but for hours.
-nh=${h##+(0)}
+nh=${h##0}
 nh=${nh:-0}
+
+#echo "H: $h  nh: $nh  M: $m  nm: $nm"
 
 timeTillNext=$((60 - $nm))
 
