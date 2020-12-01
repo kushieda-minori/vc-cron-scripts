@@ -5,6 +5,7 @@ message="One free Castle vitality starting now, ending in 2 hours"
 url="$1"
 
 currentHour=$(TZ=Asia/Tokyo date +'%H')
+currentHour=${currentHour##0}
 #echo $currentHour
 #exit
 

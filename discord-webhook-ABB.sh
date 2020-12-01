@@ -9,7 +9,7 @@ eM=""
 eD=""
 message=""
 ## Webhook URL goes here
-url="$5"
+url="${5}"
 
 if [ -z $startY ]; then
     echo "no start year month or day specified"
