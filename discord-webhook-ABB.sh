@@ -9,7 +9,7 @@ eM=""
 eD=""
 message=""
 ## Webhook URL goes here
-url="${5}"
+url="${5:-http://localhost/}"
 
 if [ -z $startY ]; then
     echo "no start year month or day specified"
@@ -124,4 +124,4 @@ else
     message="ABB Day $ABB_DAY Round $round in $timeTillNext minutes! $4"
 fi
 
-curl -sS -H 'Content-Type: application/json' -X POST -d "{\"content\": \"${message}\"}" "$url"
+curl -sS -H 'Content-Type: application/json' -X POST -d "{\"content\": \"${message}\"}" "${url}"

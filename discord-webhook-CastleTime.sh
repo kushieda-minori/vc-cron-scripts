@@ -2,7 +2,7 @@
 
 message="One free Castle vitality starting now, ending in 2 hours"
 ## Webhook URL goes here
-url="$1"
+url="${1:-http://localhost/}"
 
 currentHour=$(TZ=Asia/Tokyo date +'%H')
 currentHour=${currentHour##0}
@@ -11,6 +11,6 @@ currentHour=${currentHour##0}
 
 # 08 - 10, 12 - 14, 22 - 00 (in JST)
 if (( $currentHour ==  8 || $currentHour ==  12 || $currentHour ==  22 )); then
-    curl -sS -H 'Content-Type: application/json' -X POST -d "{\"content\": \"${message}\"}" "$url"
+    curl -sS -H 'Content-Type: application/json' -X POST -d "{\"content\": \"${message}\"}" "${url}"
 fi
 
