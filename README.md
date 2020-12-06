@@ -82,6 +82,38 @@ Example messages from the above cron jobs as seen in Discord:
 > ABB Day 3 Round 1 START! @members
 
 
+## discord-webhook-Event.sh
+
+This script is geared towards notifying when events start and end. It's expectation is to run on an hourly granularity.
+
+The script accepts 4 parameters:
+
+1. Event name
+1. Event start time in JST to the nearest hour. i.e. `2020120712` for noon on Dec 7, 2020 JST
+1. Event end time in JST to the nearest hour. i.e. `2020121612` for noon on Dec 16, 2020 JST
+1. Webhook URL
+
+Example Cron Jobs are below.
+
+```sh
+# VC Event Tower notice
+0 * * * discord-webhook-Event.sh 'Tower' '2020112612' '2020120712' 'https://discordapp.com/api/webhooks/API/Key'
+# VC Event DRV notice
+0 * * * discord-webhook-Event.sh 'Demon Realm Voyage' '2020120712' '2020121612' 'https://discordapp.com/api/webhooks/API/Key'
+# VC Event Maintenance notice
+0 * * * discord-webhook-Event.sh 'Maintenance' '2020120712' '2020120718' 'https://discordapp.com/api/webhooks/API/Key'
+```
+
+Example messages from the above cron job as seen in Discord:
+
+> Tower ends in 1 hour
+
+> Tower ended
+
+> Demon Realm Voyage starting now
+
+> Maintenance starting now
+
 ## discord-webhook-CastleTime.sh
 
 This script is geared towards notifying when Free Vitality is available through the Castle in game. The script is meant to be run every hour, however it will only output at the correct times.
